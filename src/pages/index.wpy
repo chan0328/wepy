@@ -16,10 +16,10 @@
 		methods = {
 
 		}
-		onLoad = {
+		onLoad() = {
 
 		}
-		onShow = {
+		onShow() = {
 
 		}
 	}
