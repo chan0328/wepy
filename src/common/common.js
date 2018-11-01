@@ -58,7 +58,7 @@ let common = {
         }
         //验证密码
         if('pwd'===type){
-            return /^([a-zA-Z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,16}$/.test(value)''
+            return /^([a-zA-Z0-9\.\@\!\#\$\%\^\&\*\(\)]){6,16}$/.test(value);
         }
         //身份证验证15和18位
         if('idCard'===type){
