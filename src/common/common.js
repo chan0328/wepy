@@ -1,4 +1,19 @@
+import wepy from 'wepy'
+const baseUrl="";//线上url
 let common = {
+    // request(url,data,method){
+    //   if(data){
+    //     data.openid=wx.getStorageSync('openid');//统一添加openid
+    //   }
+    //   return wepy.request({
+    //     url:baseUrl+url,
+    //     method:method,
+    //     data:data,
+    //     header:{
+    //       authorization:wx.getStorageSync('token');//统一添加token
+    //     }
+    //   })
+    // }
     //上传图片
     uploadImg(token,fun){
       var that=this;
@@ -66,8 +81,7 @@ let common = {
         }
     },
     // 跳转
-    routeTo(router,type,nums){
-      let that = this;
+    routeTo(router,type){
       if(type=='redirectTo'){
           if(wx.getStorageSync('click')==''){
             wx.redirectTo({
@@ -84,7 +98,7 @@ let common = {
           wx.setStorageSync('click','yes');
           setTimeout(()=>{wx.setStorageSync('click','')},800)
         }
-      }else if(type=='back'){
+      }else if(type=='switchTab'){
         if(wx.getStorageSync('click')==''){
           wx.switchTab({
             url: router

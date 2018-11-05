@@ -1,5 +1,18 @@
-<style lang="less">
-  
+<style lang='less'>
+    /*去除scroll滚动条*/
+  ::-webkit-scrollbar {width: 0;height: 0;color: transparent;}
+  /*溢出隐藏*/
+  .ellipsis{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+  .ellipsis_2{overflow: hidden;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+  .ellipsis_3{overflow: hidden;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+  /*富文本样式*/
+  .wxParse{
+    text-align: justify;
+    padding:30rpx 20rpx;
+    image{
+      width: 100%;
+    }
+  }
 </style>
 
 <script>
@@ -38,6 +51,18 @@
 
     constructor() {
       super();
+      //拦截请求
+      // this.intercept('request',{
+      //   config(p){
+      //     return p;
+      //   },
+      //   success(p){
+      //     return p;
+      //   },
+      //   fail(p){
+      //     return p
+      //   }
+      // })
       this.use('requestfix');
       this.use('promisify');
     }
