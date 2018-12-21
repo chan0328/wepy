@@ -7,6 +7,9 @@ module.exports = {
   cliLogs: !prod,
   build: {
   },
+  watchOption: {
+    awaitWriteFinish: true
+  },
   resolve: {
     alias: {
       counter: path.join(__dirname, 'src/components/counter'),

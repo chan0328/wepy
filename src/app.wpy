@@ -51,18 +51,6 @@
 
     constructor() {
       super();
-      //拦截请求
-      // this.intercept('request',{
-      //   config(p){
-      //     return p;
-      //   },
-      //   success(p){
-      //     return p;
-      //   },
-      //   fail(p){
-      //     return p
-      //   }
-      // })
       this.use('requestfix');
       this.use('promisify');
     }
